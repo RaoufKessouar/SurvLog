@@ -30,6 +30,7 @@ CONFIG_FILE = ROOT / "residences.json"
 STATE_FILE = ROOT / "state.json"
 ALERT_FILE = ROOT / "alert.md"
 HIST_FILE = ROOT / "historique.csv"
+JOURNAL_FILE = ROOT / "journal_checks.csv"
 
 HEADERS = {
     "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -196,6 +197,20 @@ def append_history(rows: list[list[str]]) -> None:
         w.writerows(rows)
 
 
+def append_journal(ts: str, name: str, result: dict) -> None:
+    """Journal de validation : une ligne par résidence à CHAQUE check.
+    Activé seulement si la variable d'environnement JOURNAL_COMPLET vaut "1"."""
+    if os.environ.get("JOURNAL_COMPLET") != "1":
+        return
+    new_file = not JOURNAL_FILE.exists()
+    units = " ; ".join(f"{k}={v}" for k, v in result.get("units", {}).items()) or "-"
+    with JOURNAL_FILE.open("a", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        if new_file:
+            w.writerow(["date_utc", "residence", "badge", "logements", "erreur"])
+        w.writerow([ts, name, result.get("badge", "?"), units, result.get("erreur") or "-"])
+
+
 def send_telegram(message: str) -> None:
     token = os.environ.get("TELEGRAM_BOT_TOKEN")
     chat_id = os.environ.get("TELEGRAM_CHAT_ID")
@@ -225,6 +240,7 @@ def main() -> None:
     for res in residences:
         name, url = res["nom"], res["url"]
         result = check_residence(res)
+        append_journal(ts, name, result)
         if result.get("erreur"):
             print(f"[warn] {name} : {result['erreur']}", file=sys.stderr)
             if name in old_state:  # garder l'ancien état pour ne pas générer de fausse alerte
