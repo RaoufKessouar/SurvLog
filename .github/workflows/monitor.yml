@@ -2,7 +2,7 @@ name: Surveillance logements Fac-Habitat
 
 on:
   schedule:
-    - cron: "0 * * * *"   # toutes les heures (mets "*/30 * * * *" pour toutes les 30 min)
+    - cron: "13,43 * * * *"   # 2x/heure à des minutes creuses (13 et 43) pour éviter les créneaux saturés
   workflow_dispatch:        # permet de lancer manuellement depuis l'onglet Actions
 
 permissions:
