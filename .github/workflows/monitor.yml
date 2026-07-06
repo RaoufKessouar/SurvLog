@@ -2,7 +2,7 @@ name: Surveillance logements Fac-Habitat
 
 on:
   schedule:
-    - cron: "13,43 * * * *"   # 2x/heure à des minutes creuses (13 et 43) pour éviter les créneaux saturés
+    - cron: "13 */4 * * *"   # secours : 1 tentative toutes les 4h si cron-job.org tombe en panne
   workflow_dispatch:        # permet de lancer manuellement depuis l'onglet Actions
 
 permissions:
