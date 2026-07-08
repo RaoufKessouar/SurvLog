@@ -48,5 +48,13 @@
       "T1": "Complet"
     }
   },
-  "_maj": "2026-07-08T15:01:44+00:00"
+  "Studefi Arcueil - Joliot-Curie": {
+    "badge": "Complet",
+    "units": {}
+  },
+  "Studefi Paris 18e - Évariste Galois": {
+    "badge": "Complet",
+    "units": {}
+  },
+  "_maj": "2026-07-08T15:03:09+00:00"
 }
