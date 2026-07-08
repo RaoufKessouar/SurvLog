@@ -30,5 +30,13 @@
   {
     "nom": "Fac-Habitat Gondoles (Choisy-le-Roi)",
     "url": "https://logement.smerra.fr/residence-etudiante/fac-habitat-gondoles/"
+  },
+  {
+    "nom": "Studefi Arcueil - Joliot-Curie",
+    "url": "https://www.studefi.fr/main.php?srv=Residence&op=show&cdGroupe=788G"
+  },
+  {
+    "nom": "Studefi Paris 18e - Évariste Galois",
+    "url": "https://www.studefi.fr/main.php?srv=Residence&op=show&cdGroupe=784G"
   }
 ]
