@@ -245,12 +245,16 @@ def main() -> None:
             print(f"[warn] {name} : {result['erreur']}", file=sys.stderr)
             if name in old_state:  # garder l'ancien état pour ne pas générer de fausse alerte
                 new_state[name] = old_state[name]
-                continue
+            # résidence jamais vue + fetch en échec : on ne sauvegarde RIEN,
+            # la première lecture réussie servira de référence (baseline)
+            continue
         new_state[name] = {"badge": result["badge"], "units": result["units"]}
         print(f"{name} -> badge: {result['badge']} | logements: {result['units']}")
         hist += history_rows(ts, name, old_state.get(name), result)
-        if not first_run:
-            all_alerts += diff_alerts(name, url, old_state.get(name), result)
+        # alerte uniquement si on a une référence antérieure : une nouvelle
+        # résidence est enregistrée silencieusement (baseline), jamais alertée
+        if not first_run and name in old_state:
+            all_alerts += diff_alerts(name, url, old_state[name], result)
     append_history(hist)
 
     new_state["_maj"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
