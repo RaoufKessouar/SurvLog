@@ -127,10 +127,34 @@ def parse_units(raw: str) -> dict:
     return units
 
 
+STUDEFI_MARKER = "Aucun logement disponible"
+
+
+def parse_studefi(raw: str) -> dict:
+    """Résidences studefi.fr : détection par présence/absence du marqueur
+    "Aucun logement disponible" (état "disponible" jamais observé -> prudence :
+    toute disparition du marqueur sur une page valide = disponible)."""
+    text = strip_tags(raw)
+    # page valide ? (sinon un site en panne renverrait "marqueur absent" = fausse alerte)
+    if "studefi" not in text.lower() and "sidence" not in text:
+        raise ValueError("page Studefi invalide ou vide")
+    if STUDEFI_MARKER in text:
+        status = "Complet"
+    elif "showListeAttente" in raw:
+        # bouton liste d'attente encore là mais texte absent : cas ambigu -> alerte prudente
+        status = "Disponible (marqueur 'Aucun logement disponible' absent)"
+    else:
+        status = "Disponible (marqueur 'Aucun logement disponible' disparu)"
+    return {"badge": status, "units": {}}
+
+
 def check_residence(res: dict) -> dict:
     result = {"badge": "Inconnu", "units": {}, "erreur": None}
     try:
         raw = fetch(res["url"])
+        if "studefi.fr" in res["url"].lower():
+            result.update(parse_studefi(raw))
+            return result
         result["badge"] = parse_badge(strip_tags(raw))
         iframe = find_iframe_url(raw)
         if iframe:
