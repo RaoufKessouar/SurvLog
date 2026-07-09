@@ -19,6 +19,7 @@ import json
 import os
 import re
 import sys
+import time
 import unicodedata
 import urllib.parse
 import urllib.request
@@ -47,10 +48,19 @@ STATUS_RE = (r"(Complet|Indisponible|[AÀ]\s?venir|Dispo\s+à\s+venir"
              r"|Disponible(?:\s+à\s+partir\s+du\s+[\d/.-]+)?)")
 
 
-def fetch(url: str) -> str:
-    req = urllib.request.Request(url, headers=HEADERS)
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return resp.read().decode("utf-8", "replace")
+def fetch(url: str, attempts: int = 3, timeout: int = 60) -> str:
+    """Récupère une page avec plusieurs tentatives (sites lents ou capricieux)."""
+    last_err = None
+    for i in range(attempts):
+        try:
+            req = urllib.request.Request(url, headers=HEADERS)
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return resp.read().decode("utf-8", "replace")
+        except Exception as e:
+            last_err = e
+            if i < attempts - 1:
+                time.sleep(10 * (i + 1))  # 10 s puis 20 s avant nouvel essai
+    raise last_err
 
 
 def strip_tags(raw: str) -> str:
