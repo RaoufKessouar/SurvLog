@@ -3,7 +3,7 @@ name: Surveillance logements Fac-Habitat
 on:
   schedule:
     - cron: "13 */4 * * *"   # secours : 1 tentative toutes les 4h si cron-job.org tombe en panne
-  workflow_dispatch:        # permet de lancer manuellement depuis l'onglet Actions
+  workflow_dispatch:          # déclenché toutes les 30 min par cron-job.org
 
 permissions:
   contents: write
@@ -27,7 +27,6 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          JOURNAL_COMPLET: "1"   # journal de validation : 1 ligne par résidence à chaque check. Supprime cette ligne pour l'arrêter.
         run: python monitor.py
 
       - name: Alerte par email (création d'une issue GitHub)
@@ -47,4 +46,11 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add state.json historique.csv
           [ -f journal_checks.csv ] && git add journal_checks.csv
-          git diff --cached --quiet || (git commit -m "màj état $(date -u +'%Y-%m-%d %H:%M')" && git push)
+          if ! git diff --cached --quiet; then
+            git commit -m "màj état $(date -u +'%Y-%m-%d %H:%M')"
+            for i in 1 2 3; do
+              git push && break
+              echo "push refusé, resynchronisation (essai $i)..."
+              git pull --rebase origin main || { git rebase --abort; exit 1; }
+            done
+          fi
