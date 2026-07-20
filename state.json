@@ -6,7 +6,7 @@
     }
   },
   "Fac-Habitat Hortense Wild (Châtillon)": {
-    "badge": "Complet",
+    "badge": "Dispo à venir",
     "units": {
       "T1": "Complet"
     }
@@ -30,13 +30,13 @@
     }
   },
   "Fac-Habitat Val de Bièvre (Gentilly)": {
-    "badge": "Complet",
+    "badge": "Dispo à venir",
     "units": {
       "T1": "Complet"
     }
   },
   "Fac-Habitat Jean Jaurès (Ivry-sur-Seine)": {
-    "badge": "Complet",
+    "badge": "Dispo à venir",
     "units": {
       "T1": "Complet"
     }
@@ -48,5 +48,5 @@
       "T2": "Complet"
     }
   },
-  "_maj": "2026-07-20T22:31:08+00:00"
+  "_maj": "2026-07-20T23:01:25+00:00"
 }
