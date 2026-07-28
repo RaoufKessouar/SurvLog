@@ -6,7 +6,7 @@
     }
   },
   "Fac-Habitat Hortense Wild (Châtillon)": {
-    "badge": "Dispo à venir",
+    "badge": "Complet",
     "units": {
       "T1": "Complet"
     }
@@ -45,9 +45,9 @@
   "Fac-Habitat Gondoles (Choisy-le-Roi)": {
     "badge": "Complet",
     "units": {
-      "T1": "Complet",
-      "T2": "Complet"
+      "T2": "Complet",
+      "T1": "Complet"
     }
   },
-  "_maj": "2026-07-28T22:31:04+00:00"
+  "_maj": "2026-07-28T23:01:17+00:00"
 }
