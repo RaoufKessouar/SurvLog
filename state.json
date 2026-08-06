@@ -45,9 +45,9 @@
   "Fac-Habitat Gondoles (Choisy-le-Roi)": {
     "badge": "Complet",
     "units": {
-      "T2": "Complet",
-      "T1": "Complet"
+      "T1": "Complet",
+      "T2": "Complet"
     }
   },
-  "_maj": "2026-08-06T00:01:24+00:00"
+  "_maj": "2026-08-06T00:31:14+00:00"
 }
