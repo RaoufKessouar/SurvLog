@@ -34,8 +34,8 @@
     "badge": "Dispo à venir",
     "units": {
       "T1 Bis": "Complet",
-      "T1": "Complet",
-      "T2": "Complet"
+      "T2": "Complet",
+      "T1": "Complet"
     }
   },
   "Fac-Habitat Jean Jaurès (Ivry-sur-Seine)": {
@@ -51,5 +51,5 @@
       "T1": "Complet"
     }
   },
-  "_maj": "2026-08-12T18:31:15+00:00"
+  "_maj": "2026-08-12T19:01:22+00:00"
 }
