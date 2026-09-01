@@ -34,8 +34,8 @@
     "badge": "Complet",
     "units": {
       "T1 Bis": "Complet",
-      "T2": "Complet",
-      "T1": "Complet"
+      "T1": "Complet",
+      "T2": "Complet"
     }
   },
   "Fac-Habitat Jean Jaurès (Ivry-sur-Seine)": {
@@ -45,10 +45,10 @@
     }
   },
   "Fac-Habitat Gondoles (Choisy-le-Roi)": {
-    "badge": "Complet",
+    "badge": "Dispo à venir",
     "units": {
       "T1": "Complet"
     }
   },
-  "_maj": "2026-09-01T23:01:38+00:00"
+  "_maj": "2026-09-01T23:31:20+00:00"
 }
