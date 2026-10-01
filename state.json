@@ -33,7 +33,9 @@
   "Fac-Habitat Val de Bièvre (Gentilly)": {
     "badge": "Dispo à venir",
     "units": {
-      "T1 BIS": "Complet"
+      "T1 Bis": "Complet",
+      "T1": "Complet",
+      "T2": "Complet"
     }
   },
   "Fac-Habitat Jean Jaurès (Ivry-sur-Seine)": {
@@ -45,9 +47,9 @@
   "Fac-Habitat Gondoles (Choisy-le-Roi)": {
     "badge": "Complet",
     "units": {
-      "T2": "Complet",
-      "T1": "Complet"
+      "T1": "Complet",
+      "T2": "Complet"
     }
   },
-  "_maj": "2026-10-01T10:01:37+00:00"
+  "_maj": "2026-10-01T10:31:21+00:00"
 }
