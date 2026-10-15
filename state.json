@@ -8,7 +8,7 @@
   "Fac-Habitat Hortense Wild (Châtillon)": {
     "badge": "Complet",
     "units": {
-      "T1": "A venir"
+      "T1": "Complet"
     }
   },
   "Fac-Habitat Erwin Guldner (Sceaux)": {
@@ -50,5 +50,5 @@
       "T1": "A venir"
     }
   },
-  "_maj": "2026-10-15T12:01:28+00:00"
+  "_maj": "2026-10-15T12:31:16+00:00"
 }
