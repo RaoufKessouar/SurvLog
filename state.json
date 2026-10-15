@@ -8,7 +8,7 @@
   "Fac-Habitat Hortense Wild (Châtillon)": {
     "badge": "Complet",
     "units": {
-      "T1": "Complet"
+      "T1": "A venir"
     }
   },
   "Fac-Habitat Erwin Guldner (Sceaux)": {
@@ -34,8 +34,8 @@
     "badge": "Complet",
     "units": {
       "T1 Bis": "Complet",
-      "T1": "Complet",
-      "T2": "Complet"
+      "T2": "Complet",
+      "T1": "Complet"
     }
   },
   "Fac-Habitat Jean Jaurès (Ivry-sur-Seine)": {
@@ -50,5 +50,5 @@
       "T1": "A venir"
     }
   },
-  "_maj": "2026-10-15T10:01:23+00:00"
+  "_maj": "2026-10-15T10:31:14+00:00"
 }
