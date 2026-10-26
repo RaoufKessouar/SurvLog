@@ -26,16 +26,15 @@
   "Fac-Habitat Pierre Ringenbach (Sceaux)": {
     "badge": "Complet",
     "units": {
-      "T1 Bis": "Complet",
-      "T1": "Complet"
+      "T1 BIS": "Complet"
     }
   },
   "Fac-Habitat Val de Bièvre (Gentilly)": {
     "badge": "Complet",
     "units": {
       "T1 Bis": "Complet",
-      "T2": "Complet",
-      "T1": "Complet"
+      "T1": "Complet",
+      "T2": "Complet"
     }
   },
   "Fac-Habitat Jean Jaurès (Ivry-sur-Seine)": {
@@ -47,9 +46,9 @@
   "Fac-Habitat Gondoles (Choisy-le-Roi)": {
     "badge": "Complet",
     "units": {
-      "T2": "Complet",
-      "T1": "Complet"
+      "T1": "Complet",
+      "T2": "Complet"
     }
   },
-  "_maj": "2026-10-26T13:31:20+00:00"
+  "_maj": "2026-10-26T14:01:38+00:00"
 }
