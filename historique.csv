@@ -145,3 +145,6 @@ date_utc,residence,element,ancien_statut,nouveau_statut
 2026-11-06 15:00,Fac-Habitat Val de Bièvre (Gentilly),logement T2,(nouveau type),Complet
 2026-11-07 04:30,Fac-Habitat Pierre Ringenbach (Sceaux),badge,Dispo à venir,Complet
 2026-11-10 10:00,Fac-Habitat Julie Victoire Daubié (Malakoff),logement T1,Complet,Disponible
+2026-11-10 12:01,Fac-Habitat Val de Bièvre (Gentilly),logement T1 BIS,(nouveau type),Complet
+2026-11-10 12:01,Fac-Habitat Val de Bièvre (Gentilly),logement T1 Bis,Complet,(retiré de la page)
+2026-11-10 12:01,Fac-Habitat Val de Bièvre (Gentilly),logement T2,Complet,(retiré de la page)
