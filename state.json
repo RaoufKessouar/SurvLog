@@ -20,7 +20,7 @@
   "Fac-Habitat Julie Victoire Daubié (Malakoff)": {
     "badge": "Complet",
     "units": {
-      "T1": "Disponible"
+      "T1": "Complet"
     }
   },
   "Fac-Habitat Pierre Ringenbach (Sceaux)": {
@@ -33,7 +33,8 @@
   "Fac-Habitat Val de Bièvre (Gentilly)": {
     "badge": "Complet",
     "units": {
-      "T1 BIS": "A venir"
+      "T1 BIS": "Complet",
+      "T2": "Complet"
     }
   },
   "Fac-Habitat Jean Jaurès (Ivry-sur-Seine)": {
@@ -45,9 +46,9 @@
   "Fac-Habitat Gondoles (Choisy-le-Roi)": {
     "badge": "Complet",
     "units": {
-      "T1": "Complet",
-      "T2": "Complet"
+      "T2": "Complet",
+      "T1": "Complet"
     }
   },
-  "_maj": "2026-11-24T09:31:14+00:00"
+  "_maj": "2026-11-24T10:01:33+00:00"
 }
